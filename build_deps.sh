@@ -81,6 +81,6 @@ popd
 
 mkdir -p $DEPS_LOCATION/cpp-driver/build
 pushd $DEPS_LOCATION/cpp-driver/build
-cmake ..
+cmake ..  -DCASS_BUILD_STATIC=ON  -DCASS_BUILD_SHARED=OFF -DCMAKE_CXX_FLAGS="-fPIC -Wno-class-memaccess -Wno-implicit-fallthrough" -DCMAKE_C_FLAGS="-fPIC"
 make -j 12
 popd
